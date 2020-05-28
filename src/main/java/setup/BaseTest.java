@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    IPageObject po;
+    static IPageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
@@ -48,6 +48,9 @@ public class BaseTest implements IDriver {
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("chromedriverDisableBuildCheck","true");
 
+        capabilities.setCapability("unicodeKeyboard", "true");
+        capabilities.setCapability("resetKeyboard","true");
+
         try {
             appiumDriver = new AppiumDriver(new URL(System.getProperty("ts.appium")), capabilities);
         } catch (MalformedURLException e) {
@@ -59,7 +62,7 @@ public class BaseTest implements IDriver {
 
     }
 
-    private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
+    private static void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         po = new PageObject(appType, appiumDriver);
     }
 
