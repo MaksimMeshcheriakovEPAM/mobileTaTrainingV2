@@ -20,7 +20,14 @@ public class webMobileTests extends BaseTest {
         getPo().getWelement("searchField").sendKeys(get("search"));
         getPo().getWelement("searchBtn").click();
 
-        assert getPo().getWelement("searchResults").isDisplayed() : "Results are empty";
+        boolean check = true;
+        try {
+            getPo().getWelement("searchResults").isDisplayed();
+        } catch (NoSuchElementException e) {
+            check = false;
+        }
+
+        assert check : "Results are empty";
         System.out.println("Android web test done");
     }
 
