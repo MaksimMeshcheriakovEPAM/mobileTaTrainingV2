@@ -23,5 +23,4 @@ public class webMobileTests extends BaseTest {
         // Log that test finished
         System.out.println("Site opening done");
     }
-
 }

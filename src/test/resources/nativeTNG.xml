@@ -3,7 +3,7 @@
     <parameter name="appType" value="native"/>
     <parameter name="deviceName" value="emulator-5554"/>
     <parameter name="platformName" value="Android"/>
-    <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"/>
+    <parameter name="app" value="src/main/resources/EPAMTestApp.apk"/>
     <test name="Native tests">
         <groups>
             <run>
