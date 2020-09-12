@@ -21,7 +21,7 @@ public class nativeMobileTests extends BaseTest {
     @Test(groups = {"native"}, dataProvider = "DataForIncorrectLoginScenario",
             dataProviderClass = TestData.class,
             description = "This simple test just click on the Sign In button")
-    public void incorrect(String loginActivity, String expectedMessage)
+    public void incorrectLoginInSystem(String loginActivity, String expectedMessage)
             throws IllegalAccessException, NoSuchFieldException, IOException, TesseractException {
         setActivitiesForTest(new LoginActivity(getDriver()));
 
