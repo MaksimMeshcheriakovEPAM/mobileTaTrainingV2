@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="platkovsky.alexey.epamtestapp">
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="27" />
+
+    <uses-permission
+        android:name="android.permission.GET_ACCOUNTS" />
+
+    <uses-permission
+        android:name="android.permission.READ_PROFILE" />
+
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:theme="@ref/0x7f0e0006"
+        android:label="@ref/0x7f0d0024"
+        android:icon="@ref/0x7f0c0000"
+        android:debuggable="true"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:roundIcon="@ref/0x7f0c0001">
+
+        <activity
+            android:label="@ref/0x7f0d0024"
+            android:name="platkovsky.alexey.epamtestapp.activities.LoginActivity">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f0d003f"
+            android:name="platkovsky.alexey.epamtestapp.activities.RegistrationActivity" />
+
+        <activity
+            android:label="@ref/0x7f0d0043"
+            android:name="platkovsky.alexey.epamtestapp.activities.BudgetActivity" />
+
+        <activity
+            android:label="@ref/0x7f0d0043"
+            android:name="platkovsky.alexey.epamtestapp.activities.NewExpenseActivity" />
+    </application>
+</manifest>
