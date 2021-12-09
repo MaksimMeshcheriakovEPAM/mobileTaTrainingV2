@@ -4,7 +4,6 @@ import entity.User;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import jdk.internal.jline.internal.Log;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pages.BasePage;

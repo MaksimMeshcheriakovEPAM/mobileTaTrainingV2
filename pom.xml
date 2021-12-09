@@ -8,6 +8,12 @@
     <artifactId>mobileTaTrainingV2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <email>validemail@gmal.com</email>
+        <username>Jane Doe</username>
+        <password>strongPassword</password>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.appium</groupId>
@@ -33,6 +39,9 @@
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <ts.appium>http://localhost:4723/wd/hub</ts.appium>
+                        <email>validemail@gmal.com</email>
+                        <username>Jane Doe</username>
+                        <password>strongPassword</password>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

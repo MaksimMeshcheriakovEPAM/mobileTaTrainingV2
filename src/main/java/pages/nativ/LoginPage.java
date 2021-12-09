@@ -34,7 +34,7 @@ public class LoginPage extends BasePage {
         return new BudgetActivityPage(appiumDriver);
     }
 
-    public RegistrationPage openRegistrationPage(User user) {
+    public RegistrationPage openRegistrationPage() {
         registerBtn.click();
         return new RegistrationPage(appiumDriver);
     }
