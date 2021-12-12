@@ -1,4 +1,4 @@
-package scenarios;
+package tests;
 
 import data.MobileDataProvider;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pageObjects.webTestPage.WebPageObject;
 import setup.BaseTest;
 
-public class WebMobileTests extends BaseTest {
+public class webMobileTest extends BaseTest {
 
     @Test(dataProvider = "webDataProvider",
           dataProviderClass = MobileDataProvider.class,
