@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pageObjects.webTestPage.WebPageObject;
 import setup.BaseTest;
 
-public class WebMobileTests extends BaseTest {
+public class webMobileTests extends BaseTest {
 
     @Test(dataProvider = "webDataProvider",
           dataProviderClass = MobileDataProvider.class,

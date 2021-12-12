@@ -11,7 +11,7 @@
             </run>
         </groups>
         <classes>
-            <class name="scenarios.NativeMobileTests"/>
+            <class name="scenarios.nativeMobileTests"/>
         </classes>
     </test>
 </suite>
