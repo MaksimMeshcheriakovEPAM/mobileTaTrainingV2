@@ -9,6 +9,4 @@ public class WebPageObject  {
         PageFactory.initElements(appiumDriver, this);
 
     }
-
-
 }
