@@ -1,17 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Native mobile testing Suite">
-    <parameter name="appType" value="native"></parameter>
-    <parameter name="deviceName" value="emulator-5554"></parameter>
-    <parameter name="platformName" value="Android"></parameter>
-    <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"></parameter>
-    <test name="Native tests">
+    <parameter name="appType" value="native"/>
+    <parameter name="deviceName" value="emulator-5554"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"/>
+    <test name="Native scenarios">
         <groups>
             <run>
                 <include name="native"/>
             </run>
         </groups>
-        <packages>
-            <package name="scenarios"/>
-        </packages>
+        <classes>
+            <class name="scenarios.nativeMobileTests"/>
+        </classes>
     </test>
 </suite>

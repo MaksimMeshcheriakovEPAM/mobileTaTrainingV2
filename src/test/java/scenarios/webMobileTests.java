@@ -1,27 +1,27 @@
 package scenarios;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import data.MobileDataProvider;
+import java.util.List;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObjects.webTestPage.WebPageObject;
 import setup.BaseTest;
 
 public class webMobileTests extends BaseTest {
 
-    @Test(groups = {"web"}, description = "Make sure that we've opened IANA homepage")
-    public void simpleWebTest() throws InterruptedException {
-        getDriver().get("http://iana.org"); // open IANA homepage
-
-        // Make sure that page has been loaded completely
-        new WebDriverWait(getDriver(), 10).until(
-                wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
-        );
-
-        // Check IANA homepage title
-        assert ((WebDriver) getDriver()).getTitle().equals("Internet Assigned Numbers Authority") : "This is not IANA homepage";
-
-        // Log that test finished
-        System.out.println("Site opening done");
+    @Test(dataProvider = "webDataProvider",
+          dataProviderClass = MobileDataProvider.class,
+          groups = {"web"},
+          description = "Relevant results assert for search 'Epam' request in the Google")
+    public void WebTest(String googleURL, String req) {
+        WebPageObject googlePage = (WebPageObject) getPo().getPageObject();
+        googlePage.openPage(googleURL);
+        googlePage.search(req);
+        List<WebElement> resultList = googlePage.getSearchResult();
+        for (WebElement result : resultList) {
+            Assert.assertTrue(result.getText().toLowerCase()
+                                        .contains(req.toLowerCase()));
+        }
     }
-
 }
