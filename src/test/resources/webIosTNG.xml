@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Cloud iOS web test suite">
+  <parameter name="appType" value="web"/>
+  <parameter name="udid" value="ec645b7fe329a5ee0b53bd3494ad2cd8963ec07a"/>
+  <parameter name="platformName" value="iOS"/>
+  <parameter name="browserName" value="Safari"/>
+  <test name="Cloud iOS Web tests">
+    <groups>
+      <run>
+        <include name="web"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="scenarios.webMobileTests"/>
+    </classes>
+  </test>
+</suite>

@@ -3,6 +3,7 @@ package pageObjects.nativeTestPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,7 @@ public class BudgetPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='BudgetActivity']")
     private WebElement budgetActionBar;
 
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Add']")
     @AndroidFindBy(id = BASE_PATH + "add_new_expense")
     private WebElement addExpenseBtn;
 

@@ -82,7 +82,33 @@
                 <suite.file>./src/test/resources/webTNG.xml</suite.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>cloudWebiOS</id>
+            <properties>
+                <suite.file>./src/test/resources/webIosTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudWebAndroid</id>
+            <properties>
+                <suite.file>./src/test/resources/webAndroidTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudNativeAndroid</id>
+            <properties>
+                <suite.file>./src/test/resources/androidCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudNativeIos</id>
+            <properties>
+                <suite.file>./src/test/resources/iosCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
-
-
 </project>
