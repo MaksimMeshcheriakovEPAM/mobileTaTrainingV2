@@ -1,4 +1,4 @@
-package com.epam.tc.hw02.support;
+package support;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;

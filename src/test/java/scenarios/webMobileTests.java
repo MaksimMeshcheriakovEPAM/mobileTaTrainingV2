@@ -2,9 +2,9 @@ package scenarios;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import com.epam.tc.hw02.setup.BaseTest;
-import com.epam.tc.hw02.pages.web.SearchGooglePage;
-import com.epam.tc.hw02.pages.web.WebIndexPage;
+import setup.BaseTest;
+import pages.web.SearchGooglePage;
+import pages.web.WebIndexPage;
 import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 

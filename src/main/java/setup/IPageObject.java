@@ -1,4 +1,4 @@
-package com.epam.tc.hw02.setup;
+package setup;
 
 public interface IPageObject {
 

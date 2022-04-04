@@ -1,4 +1,4 @@
-package com.epam.tc.hw02.pages.application;
+package pages.application;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;

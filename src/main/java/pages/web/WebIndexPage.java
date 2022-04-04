@@ -1,4 +1,4 @@
-package com.epam.tc.hw02.pages.web;
+package pages.web;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Keys;

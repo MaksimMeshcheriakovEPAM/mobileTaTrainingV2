@@ -1,13 +1,13 @@
 package scenarios;
 
-import static com.epam.tc.hw02.support.Constants.EMAIL;
-import static com.epam.tc.hw02.support.Constants.LOGIN;
-import static com.epam.tc.hw02.support.Constants.PASSWORD;
+import static support.Constants.EMAIL;
+import static support.Constants.LOGIN;
+import static support.Constants.PASSWORD;
 
-import com.epam.tc.hw02.pages.application.AppBudgetActivityPage;
-import com.epam.tc.hw02.pages.application.AppIndexPage;
-import com.epam.tc.hw02.setup.BaseTest;
-import com.epam.tc.hw02.support.User;
+import pages.application.AppBudgetActivityPage;
+import pages.application.AppIndexPage;
+import setup.BaseTest;
+import support.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

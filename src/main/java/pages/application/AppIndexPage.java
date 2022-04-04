@@ -1,6 +1,6 @@
-package com.epam.tc.hw02.pages.application;
+package pages.application;
 
-import com.epam.tc.hw02.support.User;
+import support.User;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;

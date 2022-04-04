@@ -1,7 +1,7 @@
-package com.epam.tc.hw02.setup;
+package setup;
 
-import com.epam.tc.hw02.pages.PageObject;
-import com.epam.tc.hw02.support.PropertiesProvider;
+import pages.PageObject;
+import support.PropertiesProvider;
 import io.appium.java_client.AppiumDriver;
 import java.io.File;
 import java.net.MalformedURLException;

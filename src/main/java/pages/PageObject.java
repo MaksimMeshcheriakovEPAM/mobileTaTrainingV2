@@ -1,7 +1,7 @@
-package com.epam.tc.hw02.pages;
+package pages;
 
-import com.epam.tc.hw02.pages.application.AppIndexPage;
-import com.epam.tc.hw02.pages.web.WebIndexPage;
+import pages.application.AppIndexPage;
+import pages.web.WebIndexPage;
 import io.appium.java_client.AppiumDriver;
 
 public class PageObject {
