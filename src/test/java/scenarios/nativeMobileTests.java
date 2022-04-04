@@ -1,13 +1,31 @@
 package scenarios;
 
+import static com.epam.tc.hw02.support.Constants.EMAIL;
+import static com.epam.tc.hw02.support.Constants.LOGIN;
+import static com.epam.tc.hw02.support.Constants.PASSWORD;
+
+import com.epam.tc.hw02.pages.application.AppBudgetActivityPage;
+import com.epam.tc.hw02.pages.application.AppIndexPage;
+import com.epam.tc.hw02.setup.BaseTest;
+import com.epam.tc.hw02.support.User;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import setup.BaseTest;
 
 public class nativeMobileTests extends BaseTest {
 
-    @Test(groups = {"native"}, description = "This simple test just click on the Sign In button")
-    public void simpleNativeTest() throws IllegalAccessException, NoSuchFieldException, InstantiationException {
-        getPo().getWelement("signInBtn").click();
+    @Test(groups = {"native"},
+          description = "This test for EPAMTestApp, create new account, sing in and check title for BudgetActivityPage")
+    public void simpleNativeTest() {
+        User defaultUser = new User(EMAIL, LOGIN, PASSWORD);
+
+        AppIndexPage indexPage = (AppIndexPage) setDriverPage().getPage();
+
+        AppBudgetActivityPage appBudgetPage = indexPage.openNewAccountPage()
+                                                       .createNewAccount(defaultUser)
+                                                       .login(defaultUser);
+
+        Assert.assertEquals(appBudgetPage.getTitle(), properties.getProperty("budget.page.title"));
+
         System.out.println("Simplest Android native test done");
 
     }
