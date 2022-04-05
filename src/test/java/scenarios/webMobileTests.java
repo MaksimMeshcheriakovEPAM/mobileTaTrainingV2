@@ -11,16 +11,13 @@ import org.testng.annotations.Test;
 public class webMobileTests extends BaseTest {
 
     @SneakyThrows
-    @Test(groups = {"web"}, description = "Make sure that we've opened IANA homepage")
+    @Test(groups = {"web"}, description = "Open Google search page and make a search using keyword ‘EPAM’. Assert that there are some relevant results")
     public void simpleWebTest() {
 
         WebIndexPage googlePage = (WebIndexPage) setDriverPage().getPage();
 
         SearchGooglePage searchPage = googlePage.openUrl(properties.getProperty("url"))
                                                 .sendRequest(properties.getProperty("search.epam"));
-
-        //        SearchGooglePage searchPage = googlePage.openUrl(properties.getProperty("url"))
-        //                                                .sendRequest(properties.getProperty("search.epam"));
 
         searchPage.searchTitlesList()
                   .forEach(title -> assertThat(title)
