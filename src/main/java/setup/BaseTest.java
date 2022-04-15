@@ -1,28 +1,24 @@
 package setup;
 
-import pages.PageObject;
-import support.PropertiesProvider;
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.*;
+import pageObjects.PageObject;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    private static PageObject po;
-    public static PropertiesProvider properties;
+    IPageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
 
-    public PageObject setDriverPage() {
+    public IPageObject getPo() {
         return po;
     }
 
@@ -32,14 +28,13 @@ public class BaseTest implements IDriver {
         System.out.println("Before: app type - "+appType);
         setAppiumDriver(platformName, deviceName, browserName, app);
         setPageObject(appType, appiumDriver);
-        properties = new PropertiesProvider();
+
     }
 
     @AfterSuite(alwaysRun = true)
-    public void tearDown() {
+    public void tearDown() throws Exception {
         System.out.println("After");
         appiumDriver.closeApp();
-        properties = null;
     }
 
     private void setAppiumDriver(String platformName, String deviceName, String browserName, String app){
