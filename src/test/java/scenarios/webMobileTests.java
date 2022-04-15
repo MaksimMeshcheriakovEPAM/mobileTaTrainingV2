@@ -20,6 +20,7 @@ public class webMobileTests extends BaseTest {
         // Check IANA homepage title
         assert ((WebDriver) getDriver()).getTitle().equals("Internet Assigned Numbers Authority") : "This is not IANA homepage";
 
+        
         // Log that test finished
         System.out.println("Site opening done");
     }
