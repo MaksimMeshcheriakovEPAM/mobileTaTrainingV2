@@ -1,12 +1,12 @@
 package scenarios;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import setup.BaseTest;
-import pages.web.SearchGooglePage;
-import pages.web.WebIndexPage;
 import lombok.SneakyThrows;
 import org.testng.annotations.Test;
+import pages.web.SearchGooglePage;
+import pages.web.WebIndexPage;
+import setup.BaseTest;
 
 public class webMobileTests extends BaseTest {
 
@@ -18,9 +18,6 @@ public class webMobileTests extends BaseTest {
 
         SearchGooglePage searchPage = googlePage.openUrl(properties.getProperty("url"))
                                                 .sendRequest(properties.getProperty("search.epam"));
-
-        //        SearchGooglePage searchPage = googlePage.openUrl(properties.getProperty("url"))
-        //                                                .sendRequest(properties.getProperty("search.epam"));
 
         searchPage.searchTitlesList()
                   .forEach(title -> assertThat(title)

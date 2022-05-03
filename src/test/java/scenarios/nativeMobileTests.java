@@ -1,15 +1,15 @@
 package scenarios;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static support.Constants.EMAIL;
 import static support.Constants.LOGIN;
 import static support.Constants.PASSWORD;
 
+import org.testng.annotations.Test;
 import pages.application.AppBudgetActivityPage;
 import pages.application.AppIndexPage;
 import setup.BaseTest;
 import support.User;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class nativeMobileTests extends BaseTest {
 
@@ -24,7 +24,7 @@ public class nativeMobileTests extends BaseTest {
                                                        .createNewAccount(defaultUser)
                                                        .login(defaultUser);
 
-        Assert.assertEquals(appBudgetPage.getTitle(), properties.getProperty("budget.page.title"));
+        assertThat(appBudgetPage.getTitle()).contains(properties.getProperty("budget.page.title"));
 
         System.out.println("Simplest Android native test done");
 
