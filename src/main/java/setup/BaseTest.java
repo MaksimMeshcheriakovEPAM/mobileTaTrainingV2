@@ -22,11 +22,13 @@ public class BaseTest implements IDriver {
         return po;
     }
 
-    @Parameters({"platformName","appType","deviceName","browserName","app"})
+    @Parameters({"automationName", "platformName","appType","deviceName","browserName","app"})
     @BeforeSuite(alwaysRun = true)
-    public void setUp(String platformName, String appType, String deviceName, @Optional("") String browserName, @Optional("") String app) throws Exception {
+    public void setUp(String automationName, String platformName, String appType, String deviceName,
+                      @Optional("") String browserName,
+                      @Optional("") String app) throws Exception {
         System.out.println("Before: app type - "+appType);
-        setAppiumDriver(platformName, deviceName, browserName, app);
+        setAppiumDriver(automationName, platformName, deviceName, browserName, app);
         setPageObject(appType, appiumDriver);
 
     }
@@ -37,9 +39,11 @@ public class BaseTest implements IDriver {
         appiumDriver.closeApp();
     }
 
-    private void setAppiumDriver(String platformName, String deviceName, String browserName, String app){
+    private void setAppiumDriver(String automationName, String platformName, String deviceName, String browserName,
+                                 String app){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
+        capabilities.setCapability("automationName",automationName);
         capabilities.setCapability("platformName",platformName);
         capabilities.setCapability("deviceName",deviceName);
 
