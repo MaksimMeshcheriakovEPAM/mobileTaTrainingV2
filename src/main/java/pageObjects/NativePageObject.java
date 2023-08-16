@@ -31,7 +31,6 @@ public class NativePageObject  {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_pwd")
     WebElement loginPwd;
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/action_bar")
-//    @AndroidFindBy(xpath = "//android.view.ViewGroup/android.widget.TextView")
     WebElement actionBar;
 
     public static final String TEXT_ON_PAGE = "android.widget.TextView";
