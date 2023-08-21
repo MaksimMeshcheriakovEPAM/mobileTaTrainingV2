@@ -2,6 +2,8 @@ package pageObjects;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
+import pageObjects.nativePageObject.LoginPage;
+import pageObjects.nativePageObject.RegistrationPage;
 import setup.IPageObject;
 
 import java.lang.reflect.Field;
@@ -19,6 +21,7 @@ public class PageObject implements IPageObject {
                 break;
             case "native":
                 somePageObject = new NativePageObject(appiumDriver);
+                //somePageObject = new RegistrationPage(appiumDriver);
                 break;
             default: throw new Exception("Can't create a page object for "+appType);
         }
